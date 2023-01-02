@@ -17,4 +17,4 @@ curl -X 'POST' \
   'http://127.0.0.1:8000/uploadfiles/' \
   -H 'accept: application/json' \
   -H 'Content-Type: multipart/form-data' \
-  -F 'upload_file=@input_full.json;type=application/json'
+  -F 'upload_file=@input_full.json;type=application/json'# fastapi_scikit
