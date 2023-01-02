@@ -57,18 +57,14 @@ async def running():
 
 @app.post("/uploadfiles/")
 def predict(upload_file: UploadFile = File(...)):
+    
     json_data = json.load(upload_file.file)
-    
-    df = pd.DataFrame(json_data)
-    
-    payload = payload_preprocessing(df)
+    payload = payload_preprocessing(pd.DataFrame(json_data))
     
     model = joblib.load("model/model.joblib") 
-    
     output = pd.DataFrame(model.predict(payload), columns=['Class']).to_json(orient='records')
     
     json_compatible_item_data = jsonable_encoder(output)
-    
     return JSONResponse(content=json_compatible_item_data)
     
 
