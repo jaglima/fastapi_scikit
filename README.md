@@ -1,5 +1,4 @@
-This is the final code for the Trustly challenge. Here goes a quick list:
-
+This code implements a very clean REST API to expose a Sklearn model through a Docker container. 
 
 - To run locally the best idea is to create an separeted env and use requirements.txt to guarantee all dependencies are installed in your system. After doing  it
     - Run: uvicorn app:app --reload to start a instance (nohup python3 -m uvicorn app:app --reload --host 0.0.0.0 if you need you terminal clean)
